@@ -25,17 +25,16 @@ The purpose of the tool is to extract additional information regarding the input
 
 In this demonstration, the tool will be applied against the UFS input and baseline datasets residing within the S3 buckets designated for the Land DA application & UFS-WM RT framework.
 
-__Capabilities:__ In Progress
+__Capabilities:__ 
 
 This tool will be able to perform the following actions:
 
 * Apply feature engineering to obtain additional information regarding the data files.
-* Extract all data filenames mapping them to their corresponding relative directory path, root folder, filename, filesize, file format, compiler (if applicable), CNTL folder (if applicable), "input" or "restart" file type, resolution (km) category, resolution (C resolution) category.
-* Categorize & sort each data file into a given UFS Weather Model Application-to-Physics Suite build & Regression Tests.
-* Generate reference table/map of each data files to UFS Weather Model Application-to-Physics Suite & Regression Tests
-* Generates map to distinguish between the configuration files & test parameters required for a given UFS application-to-physics suite build’s regression test.
+* Extract all data filenames mapping them to their corresponding relative directory path, root folder, filename, file format, compiler (if applicable), "input" or "restart" file type, resolution (km) category, resolution (C resolution) category.
+* Categorize & sort each data file into a given UFS Weather Model Application build & Regression Test.
+* Generate reference table/map of each data files to UFS Weather Model Application build & Regression Test
 
-__Future Capabilities:__
+__Future Capabilities:__ In Progress
 
 This tool can be used as a skeleton framework for querying information regarding the data files as they pertain to a unique UFS Weather Model Application-to-Physics Suite build &/or Regression Test.
 
