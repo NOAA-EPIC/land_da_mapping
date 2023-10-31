@@ -34,9 +34,9 @@ This tool will be able to perform the following actions:
 * Categorize & sort each data file into a given UFS Weather Model Application build & Regression Test.
 * Generate reference table/map of each data files to UFS Weather Model Application build & Regression Test
 
-__Future Capabilities:__ In Progress
+__Future Capabilities:__ 
 
-This tool can be used as a skeleton framework for querying information regarding the data files as they pertain to a unique UFS Weather Model Application-to-Physics Suite build &/or Regression Test.
+This tool can be used as a skeleton framework for querying information regarding the data files as they pertain to the Land DA application's test case.
 
 # Prerequisites
 * Setting up conda environment w/in RDHPCS.
@@ -44,11 +44,11 @@ This tool can be used as a skeleton framework for querying information regarding
 * [![Version badge](https://img.shields.io/badge/Python-3.9-blue.svg)](https://shields.io/)
 
 # Dataset
-* ufs_baseline&input_dataframes/baseline_df.pkl (Map of UFS baseline data to UFS Component)
-* ufs_baseline&input_dataframes/input_df.pkl  (Map of UFS input data to UFS Component)
+* input-data-YYYMMDD & develop-YYYYMMDDh in ttps://noaa-ufs-regtests-pds.s3.amazonaws.com/index.html
+* landda_inputs.tar.gz in https://noaa-ufs-land-da-pds.s3.amazonaws.com/index.html
 
 # Quick Start
-* For demonstration purposes, refer to 'categorizing-input-data-by-test-scripts-demo.ipynb' & 'map-appbuild2baseline-scripts-demo.ipynb'
+* In Progress
 
 # Environment Setup
 
@@ -139,23 +139,13 @@ To create a .yml file, execute the following commands:
 
 # What's Included
 Within the download, you will find the following directories and files:
-    * app2bl_mapper.py
-    * script_scraper.py
-    * categorizing-input-data-by-test-scripts-demo.ipynb
-    * map-appbuild2baseline-scripts-demo.ipynb
-    * data_scraper_env.yml
-    * Latest_UFSApp2BaselineMap_20220329.xlsx (ufs-app2rtdata-map)
-        * Output from mapping tool: Generated UFS App-to-Physics Suite build to baseline data files map.
-    * Latest_UFSComponent2InputMap_20211210.xlsx (ufs-conp2files-map)
-        * Output from mapping tool: Generated UFS Component-to-UFS data files map. Also, maps the configuration files and test parameters required for each unique UFS regression test.
-
-* UFS App Mapping Tool:
-    * app2bl_mapper.py
-        * Demo: map-appbuild2baseline-scripts-demo.ipynb
-    * categorizing-input-data-by-test-scripts-demo.ipynb
+    * L
+        * O
+    * L
+        * Out
     
 * List of Dependencies: 
-    * data_scraper_env.yml
+    * land_da_mapping.yml
 
 # Status
 
@@ -163,4 +153,4 @@ Within the download, you will find the following directories and files:
 [![Build badge](https://img.shields.io/badge/build-passing-blue)](https://shields.io/)
     
 # Version:
-* Draft as of 03/01/22
+* Draft as of 11/01/23
