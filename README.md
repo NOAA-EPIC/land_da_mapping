@@ -5,7 +5,7 @@ Mapping Land DA Test Case Datasets
 <p align="center">
     <img src="images/header1.png" width="500" height="200">
     <img src="images/header2.png" width="800" height="200">
-    <img src="images/header3.png" width="800" height="400">
+    <img src="images/header3.png" width="1000" height="400">
     <img src="images/header4.png" width="800" height="200">
 </p>
 
