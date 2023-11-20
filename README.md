@@ -19,12 +19,11 @@ Mapping Land DA Test Case Datasets
 
 __Introduction:__
 
-There is a need for developers/users using the Land Data Assimilation (DA) application to be able to determine what data is required for a given test case. Currently, a reference table does not exist for which will map the current Land DA test case to their corresponding required list of data files. According to the current structure of the Land DA framework, the datasets are hidden within it's the framework's scripts -- in which a unique test case is represented by the framework's retrieved_data.py script. The script will call a unique set of data files residing within the S3 buckets designated for the Land DA application & UFS-WM RT framework.
+There is a need for developers/users to determine what data is required for a given Land Data Assimilation (DA) application's test case. Currently, a reference table to determine the required data does not exist. According to the current structure of the Land DA framework, the datasets are hidden within it's the framework -- in which the data utilized for a unique test case is retrieved from within the framework's retrieved_data.py script. The script will call a unique set of data files residing within the S3 buckets designated for the Land DA application & UFS-WM RT framework.
 
 __Purpose:__ 
 
-The purpose of the tool is to extract additional information regarding the input & baseline datasets & provide developers/users a mapping of the data files required for a given Land DA's test case.
-
+The purpose of the tool is to feature extract additional information regarding the current Land DA test case's required list of input & baseline data files & providing developers/users a mapping of the data files required for a given Land DA's test case.
 In this demonstration, the tool will be applied against the UFS input and baseline datasets residing within the S3 buckets designated for the Land DA application & UFS-WM RT framework.
 
 __Capabilities:__ 
