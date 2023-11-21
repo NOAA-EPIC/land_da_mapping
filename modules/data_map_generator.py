@@ -427,8 +427,6 @@ class DataMapGenerator():
         Return: None
 
         """
-
-        # Save Data Details. 
         df.to_csv(save_fn,
                   index=False)
 
