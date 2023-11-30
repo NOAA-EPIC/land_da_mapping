@@ -305,6 +305,33 @@ class DataMapGenerator():
                 
         return df
 
+    def extract_dataset_type(self, df, dataset_type_col):
+        """
+        Extract dataset type per row with feature column set.
+        
+        Args:
+            df (pd.DataFrame): Dataframe to preprocess
+            
+            dataset_type_col (str): Column featuring details on
+                             the dataset type (e.g. baseline & input
+                             UFS-WM RT data).
+            
+        Return (pd.DataFrame): Dataframe with dataset type extracted 
+        & appended as a new feature column.
+
+        """
+        for idx, row in df.iterrows():
+            data_type1 = re.findall('develop-\d{8}', row[dataset_type_col])
+            data_type2 = re.findall('input-data-\d{8}', row[dataset_type_col])
+            if data_type1:
+                df.loc[idx, 'Dataset Type']= re.findall(r'develop-\d{8}', data_type1[0])[0]
+            elif data_type2:
+                df.loc[idx, 'Dataset Type']= re.findall(r'input-data-\d{8}', data_type2[0])[0]
+            else:
+                df.loc[idx, 'Dataset Type']= np.nan
+                
+        return df
+
     def extract_nosym_res(self, df, nosym_res_col):
         """
         Extract ocean resolution for which are featured without a symbol declared.
