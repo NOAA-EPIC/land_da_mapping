@@ -151,7 +151,9 @@ Within the download, you will find the following directories and files:
 * Module(s)
     * data_map_generator.py
         * Module for performing the feature extraction & mapping of the datasets.
-    
+* Demo:
+    * Data_Maps_Demo.ipynb
+        * Demo for consolidating data maps.
 * List of Dependencies: 
     * land_da_mapping.yml
 
@@ -161,4 +163,4 @@ Within the download, you will find the following directories and files:
 [![Build badge](https://img.shields.io/badge/build-passing-blue)](https://shields.io/)
     
 # Version:
-* Draft as of 11/06/23
+* Draft as of 12/01/23
