@@ -141,10 +141,13 @@ To create a .yml file, execute the following commands:
 
 # What's Included
 Within the download, you will find the following directories and files:
-    * L
+* Main:
+    * map_land_da_v1p1_data.py
+        * Translate Land DA v1p1 TAR into a data map.
+    * map_land_da_v1p2_data.py
+        * Modified to Accommodate for updated v1.2.0 TAR
+    * map_rt_data.py
         * O
-    * L
-        * Out
     
 * List of Dependencies: 
     * land_da_mapping.yml
