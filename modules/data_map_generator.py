@@ -6,6 +6,7 @@ from boto3.s3.transfer import TransferConfig
 from botocore import UNSIGNED
 from botocore.client import Config
 import pandas as pd
+from pandas import ExcelWriter
 import numpy as np
 from pathlib import Path
 import time
@@ -460,3 +461,72 @@ class DataMapGenerator():
         print(f"Data map saved to {save_fn}.")
 
         return
+
+    def consolidate_maps(self, rt_bl_date, rt_input_date, tar_fn, land_da_version):
+        """
+        Save dataframe as .xlsx file.
+
+        Currently, applicable to the v1.1.0 & v1.2.0 Land DA's test cases.
+
+        Args:
+            bl_map_fn (str): Baseline timestamp/date featuring the UFS-WM RT baseline data map.
+                             saved under ../results folder.
+                             (e.g. rt_baseline_{BL_DATE}_data_map.csv)
+            
+            input_map_fn (str): Input timestamp/date featuring the UFS-WM RT input data map
+                                saved under ../results folder.
+                                (e.g. rt_input_{INPUTDATA_DATE}_data_map.csv)
+            
+            tar_fn (str): Filename featuring the Land DA TAR-based object's data map.
+                          saved under ../results folder.
+                          (e.g. Landdav{version}_input_data.tar.gz_land-da_data_map.csv')
+            
+            land_da_version (str): Version of the Land DA to save within filename of the consolidated mapped .xlsx file.
+
+        Return: None
+
+        """
+        # Read files featuring the data maps of UFS-WM RT baseline datasets required for Land DA's v1.2.0
+        ufs_bl_df = pd.read_csv(f'../results/rt_baseline_{rt_bl_date}_data_map.csv')
+        
+        # Read files featuring the data maps of UFS-WM RT input datasets required for Land DA's v1.2.0
+        ufs_input_df = pd.read_csv(f'../results/rt_input_{rt_input_date}_data_map.csv')
+        
+        # Read files featuring the data maps of the Land DA's TAR-based dataset required for Land DA's v1.2.0
+        
+        # Read referenced files featuring data maps
+        land_da_input_df = pd.read_csv(f'../results/{tar_fn}')
+
+        # Filter to the "DATM" & "NOAHMP Initial Condition" data required from the UFS-WM RT S3
+        ic_input_df = ufs_input_df[(ufs_input_df['Dataset']==f'input-data-{rt_input_date}') & (ufs_input_df['UFS Component'].isin(['DATM_GSWP3_input_data', 'NOAHMP_IC']))]
+        
+        # Filter to the "Non-Fixed FV3" data required from the UFS-WM RT S3
+        ufs_input_filtered_df2 = ufs_input_df[(ufs_input_df['Dataset']==f'input-data-{rt_input_date}') & (ufs_input_df['UFS Component'].isin(['FV3_input_data'])) & (ufs_input_df['Data File'].isin(['grid_spec.nc'])) & (ufs_input_df['Sub-Category'].isin(['INPUT']))]
+        ufs_input_filtered_df3 = ufs_input_df[(ufs_input_df['Dataset']==f'input-data-{rt_input_date}') & (ufs_input_df['UFS Component'].isin(['FV3_input_data'])) & (ufs_input_df['Data File'].str.startswith('C96_grid.tile')) & (ufs_input_df['Sub-Category'].isin(['INPUT']))]
+        nonfixed_input_df = pd.concat([ufs_input_filtered_df2, ufs_input_filtered_df3])
+        
+        # Filter to the "Fixed FV3" data required from the UFS-WM RT S3
+        fixed_input_df = ufs_input_df[(ufs_input_df['Dataset']==f'input-data-{rt_input_date}') & (ufs_input_df['UFS Component'].isin(['FV3_fix_tiled'])) & (ufs_input_df['Resolution (C)']==96)]
+        
+        # Filter to the "DATM CDEPS LAND GSWP3" data required from the UFS-WM RT S3
+        bl_filtered_df = ufs_bl_df[(ufs_bl_df['Dataset']==f'develop-{rt_bl_date}') & (ufs_bl_df['Compiler'].isin(['intel'])) & (ufs_bl_df['Test Name'].isin(['datm_cdeps_lnd_gswp3']))]
+        
+        # Consolidate all generated data maps required for the specified version of the Land DA application's test case.
+        list_dfs = [ic_input_df,
+                    nonfixed_input_df, 
+                    fixed_input_df, 
+                    bl_filtered_df, 
+                    land_da_input_df]
+        names = ["DATM_NOAHMP_IC", 
+                 "NonFixed_FV3", 
+                 "Fixed_FV3", 
+                 "Baseline", 
+                 "Land_DA_TAR"]
+        save_fn = f'land_da_test_case_{land_da_version}_data_maps.xlsx'
+        with ExcelWriter(f'../results/{save_fn}') as writer:
+            for i, df in enumerate(list_dfs):
+                df.to_excel(writer,sheet_name = names[i], index=False)
+                
+        print(f"Data maps have been consolidated & saved under '../results/{save_fn}'.")
+
+        return      
