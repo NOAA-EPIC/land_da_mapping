@@ -143,11 +143,14 @@ To create a .yml file, execute the following commands:
 Within the download, you will find the following directories and files:
 * Main:
     * map_land_da_v1p1_data.py
-        * Translate Land DA v1p1 TAR into a data map.
+        * Main script for translating Land DA v1p1 TAR into a data map.
     * map_land_da_v1p2_data.py
-        * Modified to Accommodate for updated v1.2.0 TAR
+        *  Main script for translating Land DA v1p2 TAR into a data map.
     * map_rt_data.py
-        * O
+        * Main script for reqquesting the generation of the baseline & input UFS-WM RT data maps.
+* Module(s)
+    * data_map_generator.py
+        * Module for performing the feature extraction & mapping of the datasets.
     
 * List of Dependencies: 
     * land_da_mapping.yml
