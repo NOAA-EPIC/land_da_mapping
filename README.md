@@ -54,22 +54,31 @@ This tool can be used as a skeleton framework for querying information regarding
 1) Ensure your conda environment has been established (refer to [Prerequisites](#Prerequisites) section of this document) & follow directions within the demo, Data_Maps_Demo.ipynb.
 
 2) To obtain the data maps of the entire UFS-WM RT baseline & input datasets being sourced by the Land DA application, execute the following:
+   
 * python map_rt_data.py -b land-da -k_input_data input-data-YYYYMMDD -k_bl_data develop-YYYYMMDD
+  
     * Example: python map_rt_data.py -b land-da -k_input_data input-data-20221101 -k_bl_data develop-20231122
   
 3) To obtain the data maps of the entire TAR-based object being sourced by the Land DA application, execute the following:
 * For v1.2.0,
+  
     * python map_land_da_v1p2_data.py -b land-da -k Landdav1.2.0_input_data.tar.gz
       
 * For v1.0.0,
+  
     * python map_land_da_v1p1_data.py -b land-da -k landda_inputs.tar.gz_v1.1
  
 4) To obtain the data maps of the data for which is only being extracted by the Land DA application's _retrieved_data.py_ script, perform steps 2-5 & then execute the following:
 
 * python consolidate_maps.py -b land-da -bl_fn rt_baseline_{BL_DATE}_data_map.csv -input_fn rt_input_{INPUTDATA_DATE}_data_map.csv -tar_fn Landdav{VERSION}_input_data.tar.gz_land-da_data_map.csv -ver {VERSION}
 
-    * Example: For v1.2.0, python consolidate_maps.py -b land-da -bl_ts 20231122 -input_ts 20221101 -tar_fn Landdav1.2.0_input_data.tar.gz_land-da_data_map.csv -ver 1.2.0
-    * Example: For v1.0.0, python consolidate_maps.py -b land-da -bl_ts 20231122 -input_ts 20221101 -tar_fn landda_inputs.tar.gz_v1.1_land-da_data_map.csv -ver 1.1
+    * Example:
+    
+        * For v1.2.0, python consolidate_maps.py -b land-da -bl_ts 20231122 -input_ts 20221101 -tar_fn Landdav1.2.0_input_data.tar.gz_land-da_data_map.csv -ver 1.2.0
+    
+    * Example:
+    
+        * For v1.0.0, python consolidate_maps.py -b land-da -bl_ts 20231122 -input_ts 20221101 -tar_fn landda_inputs.tar.gz_v1.1_land-da_data_map.csv -ver 1.1
       
 5) The data maps will be saved under the ../results folder
 
