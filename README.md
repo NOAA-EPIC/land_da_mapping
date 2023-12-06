@@ -51,7 +51,18 @@ This tool can be used as a skeleton framework for querying information regarding
 * current_land_da_release_datav1.1.0/landda_inputs.tar.gz_v1.1 in https://noaa-ufs-land-da-pds.s3.amazonaws.com/index.html
 
 # Quick Start
-1)
+1) Follow directions within the demo, Data_Maps_Demo.ipynb.
+2) To obtain the data maps of the UFS-WM RT baseline & input datasets being sourced by the Land DA application, execute the following:
+* python map_rt_data.py -b land-da -k_input_data input-data-20221101 -k_bl_data develop-20231122
+  
+4) To obtain the data maps of the TAR-based object being sourced by the Land DA application, execute the following:
+* For v1.2.0,
+    * python map_land_da_v1p2_data.py -b land-da -k Landdav1.2.0_input_data.tar.gz
+      
+* For v1.0.0,
+    * python map_land_da_v1p1_data.py -b land-da -k landda_inputs.tar.gz_v1.1
+
+
 
 # Environment Setup
 
@@ -164,4 +175,4 @@ Within the download, you will find the following directories and files:
 [![Build badge](https://img.shields.io/badge/build-passing-blue)](https://shields.io/)
     
 # Version:
-* Draft as of 12/04/23
+* Draft as of 12/06/23
