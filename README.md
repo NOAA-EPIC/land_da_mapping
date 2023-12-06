@@ -51,13 +51,15 @@ This tool can be used as a skeleton framework for querying information regarding
 * current_land_da_release_datav1.1.0/landda_inputs.tar.gz_v1.1 in https://noaa-ufs-land-da-pds.s3.amazonaws.com/index.html
 
 # Quick Start
-1) Ensure your conda environment has been established (refer to [Prerequisites](#Prerequisites) section of this document) & follow directions within the demo, Data_Maps_Demo.ipynb.
+1) Ensure your conda environment has been established (refer to [Prerequisites](#Prerequisites) section of this document) & follow directions within the demo, __Data_Maps_Demo.ipynb__.
 
 2) To obtain the data maps of the entire UFS-WM RT baseline & input datasets being sourced by the Land DA application, execute the following:
    
 * __python map_rt_data.py -b land-da -k_input_data input-data-YYYYMMDD -k_bl_data develop-YYYYMMDD__
   
-    * Example: python map_rt_data.py -b land-da -k_input_data input-data-20221101 -k_bl_data develop-20231122
+    * Example:
+        
+        *  python map_rt_data.py -b land-da -k_input_data input-data-20221101 -k_bl_data develop-20231122
   
 3) To obtain the data maps of the entire TAR-based object being sourced by the Land DA application, execute the following:
 * For v1.2.0,
