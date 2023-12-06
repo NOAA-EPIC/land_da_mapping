@@ -47,10 +47,11 @@ This tool can be used as a skeleton framework for querying information regarding
 
 # Dataset
 * input-data-YYYMMDD & develop-YYYYMMDDh in ttps://noaa-ufs-regtests-pds.s3.amazonaws.com/index.html
-* landda_inputs.tar.gz in https://noaa-ufs-land-da-pds.s3.amazonaws.com/index.html
+* current_land_da_release_data/v1.2.0/Landdav1.2.0_input_data.tar.gz in https://noaa-ufs-land-da-pds.s3.amazonaws.com/index.html
+* current_land_da_release_datav1.1.0/landda_inputs.tar.gz_v1.1 in https://noaa-ufs-land-da-pds.s3.amazonaws.com/index.html
 
 # Quick Start
-* In Progress
+1)
 
 # Environment Setup
 
