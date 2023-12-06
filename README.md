@@ -115,9 +115,9 @@ source ~/.bashrc
 
 (OR)
 
-    * To ensure you are running Python 3.9:
+* To ensure you are running Python 3.9:
 
-        * conda create -n myenv Python=3.9
+    * conda create -n myenv Python=3.9
 
 (OR)
 
