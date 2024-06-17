@@ -8,6 +8,7 @@ Data Mapping Land DA Application
     <img src="images/header3.png" width="900" height="410">
     <img src="images/header4.png" width="900" height="650">
     <img src="images/header5.png" width="900" height="450">
+    <img src="images/header6.png" width="900" height="450">
 </p>
 
 <h5 align="center">
