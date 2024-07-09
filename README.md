@@ -180,7 +180,9 @@ Within the download, you will find the following directories and files:
     * map_land_da_v1p2_data.py
         *  Main script for translating Land DA v1p2 TAR into a data map.
     * map_rt_data.py
-        * Main script for reqquesting the generation of the baseline & input UFS-WM RT data maps.
+        * Main script for requesting the generation of the baseline & input UFS-WM RT data maps.
+    * map_land_da_develop_data.py
+        * Main script for reqquesting the generation of the UFS-WM RT development data maps.
 * Module(s)
     * data_map_generator.py
         * Module for performing the feature extraction & mapping of the datasets.
@@ -196,4 +198,4 @@ Within the download, you will find the following directories and files:
 [![Build badge](https://img.shields.io/badge/build-passing-blue)](https://shields.io/)
     
 # Version:
-* Draft as of 12/06/23
+* Draft as of 07/09/2024
