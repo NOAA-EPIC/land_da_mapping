@@ -135,7 +135,7 @@ class DataMapGenerator():
         """
         # Create a page iterator
         paginator = self.s3.get_paginator('list_objects')
-        page_iterator = paginator.paginate(Bucket='noaa-ufs-regtests-pds')
+        page_iterator = paginator.paginate(Bucket=self.bucket_name)
 
         # Extract & parse each file/object's directory/key & their corresponding file format & file size
         key_list=[]
