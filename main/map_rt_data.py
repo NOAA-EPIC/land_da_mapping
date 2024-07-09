@@ -14,7 +14,7 @@ Users must input the S3 bucket & TAR-Based Object's key to translate the UFS-WM 
 required for the current Land DA app's test case into data maps.
 
 Example:
-python map_rt_data.py -b land-da -k_input_data input-data-20221101 -k_bl_data develop-20231122
+python map_rt_data.py -b rt -k_input_data input-data-20221101 -k_bl_data develop-20231122
 
 '''
 
