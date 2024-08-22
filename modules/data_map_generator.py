@@ -42,7 +42,7 @@ class DataMapGenerator():
             self.bucket_name = 'noaa-ufs-srw-pds'
             self.profile = 'srw-app'
         elif use_bucket == 'rt':
-            self.bucket_name = 'noaa-ufs-regtests-pds'            
+            self.bucket_name = 'noaa-ufs-regtests-pds'
             self.profile = 'ufs-wm-rt-app'
         else:
             print(f"{use_bucket} Bucket Does Not Exist.")
@@ -178,7 +178,7 @@ class DataMapGenerator():
 
         # Create a column comprised of the data file formats
         for idx, val in df['Data File'].items():
-            df.loc[idx, 'Data Format'] = os.path.splitext(val)[-1]
+            df.loc[idx, 'File Extension'] = os.path.splitext(val)[-1]
 
         return df   
         
@@ -420,11 +420,11 @@ class DataMapGenerator():
             ver = [x for x in row if re.search(r'[0-9]{4}-[0-9]{2}', x)]
             ver2 = [x for x in row if re.search(r'[0-9]{4}', x)]
             if ver:
-                df.loc[idx, 'Version']= re.findall(r'[0-9]{4}-[0-9]{2}', ver[0])[0]
+                df.loc[idx, 'YYYY']= re.findall(r'[0-9]{4}-[0-9]{2}', ver[0])[0]
             elif ver2:
-                df.loc[idx, 'Version']= re.findall(r'[0-9]{4}', ver2[0])[0]
+                df.loc[idx, 'YYYY']= re.findall(r'[0-9]{4}', ver2[0])[0]
             else:
-                df.loc[idx, 'Version']= np.nan
+                df.loc[idx, 'YYYY']= np.nan
         return df
 
     def read_local_tar_dirs(self, tar_fn):
